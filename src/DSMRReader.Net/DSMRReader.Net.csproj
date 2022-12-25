@@ -16,8 +16,4 @@
     <PackageReference Include="RestEase" Version="1.6.1" />
   </ItemGroup>
 
-  <!--<ItemGroup>
-    <PackageReference Update="Stef.Validation" Version="0.1.1" />
-  </ItemGroup>-->
-
 </Project>

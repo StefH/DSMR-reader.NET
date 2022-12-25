@@ -1,5 +1,5 @@
 ## Info
-A C# client (using [RestEase](https://github.com/canton7/RestEase)) for [DSMRReader](https://DSMRReader.com): A latent text-to-image diffusion model capable of generating photo-realistic images given any text input.
+A C# client (using [RestEase](https://github.com/canton7/RestEase)) for [DSMRReader](https://github.com/dsmrreader/dsmr-reader): DSMR-protocol reader, telegram data storage and energy consumption visualizer.
 
 ## Example
 ``` c#
@@ -9,8 +9,8 @@ services.AddDSMRReaderClient(token);
 
 var provider = services.BuildServiceProvider();
 
-var DSMRReaderApi = provider.GetRequiredService<IDSMRReaderApi>();
+var api = provider.GetRequiredService<IDSMRReaderApi>();
 
-var DSMRReader = await DSMRReaderApi.GetAllDSMRReaderAsync().ConfigureAwait(false);
-Console.WriteLine("DSMRReader = {0}", DSMRReader?.Count);
+var e = await api.ElectricityConsumptionLiveAsync();
+Console.WriteLine(JsonConvert.SerializeObject(e, Formatting.Indented));
 ```

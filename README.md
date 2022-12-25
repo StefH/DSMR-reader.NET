@@ -1,5 +1,5 @@
 # DSMR-reader.NET
-A C# .NET client (using [RestEase](https://github.com/canton7/RestEase)) for [DSMR-reader](https://github.com/dsmrreader/dsmr-reader)
+A C# .NET client (using [RestEase](https://github.com/canton7/RestEase)) for [DSMR-reader](https://github.com/dsmrreader/dsmr-reader): DSMR-protocol reader, telegram data storage and energy consumption visualizer.
 
 ## Install
 | | |
@@ -11,18 +11,10 @@ A C# .NET client (using [RestEase](https://github.com/canton7/RestEase)) for [DS
 ``` c#
 var factory = new DSMRReaderApiFactory();
 
-var DSMRReaderApi = factory.GetApi("{token}");
+var api = factory.GetApi(new Uri("http://lcoalhost:7777"), "__token__");
 
-var request = new Request
-{
-    Version = "a9758cbfbd5f3c2094457d996681af52552901775aa2d6dd0b17fd15df959bef",
-    Input = new Input
-    {
-        Prompt = "a gentleman cat with blue eyes wearing a tophat in a 19th century portrait"
-    }
-};
-
-var response = await DSMRReaderApi.CreatePredictionAndWaitOnResultAsync(request).ConfigureAwait(false);
+var e = await api.ElectricityConsumptionLiveAsync();
+Console.WriteLine(JsonConvert.SerializeObject(e, Formatting.Indented));
 ```
 
 ## Example (using DependencyInjection)
