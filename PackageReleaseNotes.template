@@ -3,4 +3,4 @@
 - #{{Number}} {{Title}}{{#if Labels}} [{{join Labels ", "}}]{{/if}}
 {{/each}}
 
-The full release notes can be found here: https://github.com/StefH/Replicate.Net/blob/main/ReleaseNotes.md
+The full release notes can be found here: https://github.com/StefH/DSMR-reader.NET/blob/main/ReleaseNotes.md

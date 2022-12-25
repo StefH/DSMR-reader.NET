@@ -4,9 +4,9 @@
     <TargetFrameworks>net7.0;net6.0;netstandard2.1;netstandard2.0</TargetFrameworks>
     <Authors>Stef Heyenrath</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/StefH/DSMR-reader-API</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/StefH/DSMR-reader.NET</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/StefH/DSMR-reader-API</RepositoryUrl>
+    <RepositoryUrl>https://github.com/StefH/DSMR-reader.NET</RepositoryUrl>
     <PackageIcon>dsmr_logo.png</PackageIcon>
     <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../PackageReleaseNotes.txt"))</PackageReleaseNotes>
     <LangVersion>11</LangVersion>
