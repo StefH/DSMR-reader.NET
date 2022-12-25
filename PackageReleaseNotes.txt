@@ -1,0 +1,4 @@
+# 0.0.3 (19 September 2022)
+- #2 Add Replicate.Net.DependencyInjection [enhancement]
+
+The full release notes can be found here: https://github.com/StefH/Replicate.Net/blob/main/ReleaseNotes.md

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>DSMRReader.Net.DependencyInjection</Title>
+    <PackageId>DSMRReader.Net.DependencyInjection</PackageId>
+    <Description>DependencyInjection for DSMRReader.Net</Description>
+    <PackageTags>RestEase;Client;DSMR;protocol;telegram;P1;energy;DependencyInjection</PackageTags>
+    <PackageReadmeFile>PackageReadmeDI.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../PackageReadmeDI.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestEase.HttpClientFactory" Version="1.5.7" />
+    <PackageReference Include="Stef.Validation.Options" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DSMRReader.Net\DSMRReader.Net.csproj" />
+  </ItemGroup>
+
+</Project>
