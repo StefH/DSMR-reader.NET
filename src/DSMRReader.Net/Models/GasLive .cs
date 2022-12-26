@@ -8,5 +8,5 @@ public class GasLive
 
     public string CurrentlyDelivered { get; set; }
 
-    // public object? CostPerHour { get; set; }
+    public string CostPerInterval { get; set; }
 }

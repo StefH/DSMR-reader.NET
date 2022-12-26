@@ -14,10 +14,11 @@ public class MeterStatistics
     /// <summary>
     /// DSMR version
     /// </summary>
-    public string DsmrVersion { get; set; }
+    public string DsmrVersion { get; set; } = null!;
 
     /// <summary>
-    /// Tariff indicator electricity. The tariff indicator can be used to switch tariff  dependent loads e.g boilers. This is responsibility of the P1 user.
+    /// Tariff indicator electricity. The tariff indicator can be used to switch tariff dependent loads e.g boilers.
+    /// This is responsibility of the P1 user.
     /// </summary>
     public int ElectricityTariff { get; set; }
 
@@ -39,12 +40,12 @@ public class MeterStatistics
     /// <summary>
     /// Number of voltage sags/dips in phase L2 (polyphase meters only)
     /// </summary>
-    public int VoltageSagCountL2 { get; set; }
+    public int? VoltageSagCountL2 { get; set; }
 
     /// <summary>
     /// Number of voltage sags/dips in phase L3 (polyphase meters only)
     /// </summary>
-    public int VoltageSagCountL3 { get; set; }
+    public int? VoltageSagCountL3 { get; set; }
 
     /// <summary>
     /// Number of voltage swells in phase L1
@@ -54,12 +55,12 @@ public class MeterStatistics
     /// <summary>
     /// Number of voltage swells in phase L2 (polyphase meters only)
     /// </summary>
-    public int VoltageSwellCountL2 { get; set; }
+    public int? VoltageSwellCountL2 { get; set; }
 
     /// <summary>
     /// Number of voltage swells in phase L3 (polyphase meters only)
     /// </summary>
-    public int VoltageSwellCountL3 { get; set; }
+    public int? VoltageSwellCountL3 { get; set; }
 
     /// <summary>
     /// Number of rejected telegrams due to invalid CRC checksum
@@ -67,7 +68,7 @@ public class MeterStatistics
     public int RejectedTelegrams { get; set; }
 
     /// <summary>
-    /// The latest telegram succesfully read. Please note that only the latest telegram is saved here and will be overwritten each time.
+    /// The latest telegram successfully read. Please note that only the latest telegram is saved here and will be overwritten each time.
     /// </summary>
-    public string LatestTelegram { get; set; }
+    public string? LatestTelegram { get; set; }
 }

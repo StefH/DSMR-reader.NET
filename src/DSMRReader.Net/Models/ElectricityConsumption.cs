@@ -51,12 +51,12 @@ public class ElectricityConsumption
     /// <summary>
     /// Instantaneous active power L2 (+P) in W resolution
     /// </summary>
-    public string PhaseCurrentlyDeliveredL2 { get; set; }
+    public string? PhaseCurrentlyDeliveredL2 { get; set; }
 
     /// <summary>
     /// Instantaneous active power L3 (+P) in W resolution
     /// </summary>
-    public string PhaseCurrentlyDeliveredL3 { get; set; }
+    public string? PhaseCurrentlyDeliveredL3 { get; set; }
 
     /// <summary>
     /// Instantaneous active power L1 (-P) in W resolution
@@ -66,12 +66,12 @@ public class ElectricityConsumption
     /// <summary>
     /// Instantaneous active power L2 (-P) in W resolution
     /// </summary>
-    public string PhaseCurrentlyReturnedL2 { get; set; }
+    public string? PhaseCurrentlyReturnedL2 { get; set; }
 
     /// <summary>
     /// Instantaneous active power L3 (-P) in W resolution
     /// </summary>
-    public string PhaseCurrentlyReturnedL3 { get; set; }
+    public string? PhaseCurrentlyReturnedL3 { get; set; }
 
     /// <summary>
     /// Current voltage for phase L1 (in V)
@@ -81,12 +81,12 @@ public class ElectricityConsumption
     /// <summary>
     /// Current voltage for phase L2 (in V)
     /// </summary>
-    public string PhaseVoltageL2 { get; set; }
+    public string? PhaseVoltageL2 { get; set; }
 
     /// <summary>
     /// Current voltage for phase L3 (in V)
     /// </summary>
-    public string PhaseVoltageL3 { get; set; }
+    public string? PhaseVoltageL3 { get; set; }
 
     /// <summary>
     /// Power/current for phase L1 (in A)
@@ -96,10 +96,10 @@ public class ElectricityConsumption
     /// <summary>
     /// Power/current for phase L2 (in A)
     /// </summary>
-    public int PhasePowerCurrentL2 { get; set; }
+    public int? PhasePowerCurrentL2 { get; set; }
 
     /// <summary>
     /// Power/current for phase L3 (in A)
     /// </summary>
-    public int PhasePowerCurrentL3 { get; set; }
+    public int? PhasePowerCurrentL3 { get; set; }
 }
