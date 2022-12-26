@@ -40,7 +40,12 @@ Console.WriteLine(JsonConvert.SerializeObject(gasConsumptionLive, Formatting.Ind
 var gasConsumptions = await api.GetGasConsumptionsAsync();
 Console.WriteLine(JsonConvert.SerializeObject(gasConsumptions, Formatting.Indented));
 
+// Statistics
 var today = await api.GetTodaysConsumptionsAsync();
 Console.WriteLine(JsonConvert.SerializeObject(today, Formatting.Indented));
 
-int q = 0;
+var dayStatistics = await api.GetDayStatisticsAsync();
+Console.WriteLine(JsonConvert.SerializeObject(dayStatistics, Formatting.Indented));
+
+var hourStatistics = await api.GetHourStatisticsAsync();
+Console.WriteLine(JsonConvert.SerializeObject(hourStatistics, Formatting.Indented));

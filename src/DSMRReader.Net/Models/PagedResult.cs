@@ -1,4 +1,6 @@
-﻿namespace DSMRReader.Net.Models;
+﻿using System;
+
+namespace DSMRReader.Net.Models;
 
 public class PagedResult<T>
 {
@@ -10,5 +12,5 @@ public class PagedResult<T>
     // http://api.example.org/accounts/?offset=200&limit=100
     public string? Previous { get; set; }
 
-    public T[] Results { get; set; } = null!;
+    public T[] Results { get; set; } = Array.Empty<T>();
 }

@@ -61,7 +61,7 @@ public interface IDSMRReaderApi
     /// <param name="ordering">Which field to use when ordering the results.</param>
     [Patch("/api/v2/datalogger/meter-statistics")]
     [Header("Content-Type", "application/json")]
-    Task<MeterStatistics> MeterStatisticsPartialUpdateAsync([Body] MeterStatistics content, [Query] string? ordering = null);
+    Task<MeterStatistics> PartialUpdateMeterStatisticsAsync([Body] MeterStatistics content, [Query] string? ordering = null);
 
     /// <summary>
     /// Retrieves the energy supplier prices (contracts).
@@ -159,7 +159,7 @@ public interface IDSMRReaderApi
     /// <summary>
     /// Returns the consumption of the current day so far.
     ///
-    /// TodaySConsumptionGet (/api/v2/consumption/today)
+    /// TodaysConsumptionGet (/api/v2/consumption/today)
     /// </summary>
     [Get("/api/v2/consumption/today")]
     Task<Today> GetTodaysConsumptionsAsync();
@@ -176,7 +176,7 @@ public interface IDSMRReaderApi
     /// <param name="dayGte">Date must be after or equal to `X`</param>
     /// <param name="dayLte">Date must be before or equal to `X`</param>
     [Get("/api/v2/statistics/day")]
-    Task<PagedResult<Reading>> DayStatisticsListAsync([Query] int? limit = null, [Query] int? offset = null, [Query] string? ordering = null, [Query] string? day = null, [Query(Name = "day__gte")] string? dayGte = null, [Query(Name = "day__lte")] string? dayLte = null);
+    Task<PagedResult<DayStatistics>> GetDayStatisticsAsync([Query] int? limit = null, [Query] int? offset = null, [Query] string? ordering = null, [Query] string? day = null, [Query(Name = "day__gte")] string? dayGte = null, [Query(Name = "day__lte")] string? dayLte = null);
 
     /// <summary>
     /// Creates statistics for a day, overriding any DSMR-reader internals.### Notes- Should only be used to import historic data.
@@ -186,7 +186,7 @@ public interface IDSMRReaderApi
     /// <param name="content"></param>
     [Post("/api/v2/statistics/day")]
     [Header("Content-Type", "application/json")]
-    Task<DayStatistics> DayStatisticsCreateAsync([Body] DayStatistics content);
+    Task<DayStatistics> CreateDayStatisticsAsync([Body] DayStatistics content);
 
     /// <summary>
     /// Retrieves any aggregated hour statistics, as displayed in the Archive.### Notes- These are automatically generated a few hours after midnight, based on the consumption data.### Query parameters- *Only mandatory when explicitly marked with the **required** label. Can be omitted otherwise.*- ``limit`` / ``offset``: Pagination for iterating when having large result sets.- ``ordering``: Order by either ``hour_start`` (ASC) or ``-hour_start`` (DESC).- ``hour_start__gte`` / ``hour_start__lte``: Can be used for generic filtering the results     returned by hour start timestamp with the given datetime as placeholder `X` below. Note the ``Y-m-d HH:MM:SS``     format for `X`, in the local timezone. **Should be changed to ISO 8601 some day, supporting timezone hints.**- ⚠️ **Deprecated** ~`hour_start`: Hour start timestamp must **exactly match** the given value (`Y-m-d HH:MM:SS`).~### Changes- Deprecated the ``hour_start`` query parameter in DSMR-reader v5.3, will be dropped completely in v6.x
@@ -200,7 +200,7 @@ public interface IDSMRReaderApi
     /// <param name="hourStartGte">Hour start must be after or equal to `X`</param>
     /// <param name="hourStartLte">Hour start must be before or equal to `X`</param>
     [Get("/api/v2/statistics/hour")]
-    Task<PagedResult<Reading>> HourStatisticsListAsync([Query] int? limit = null, [Query] int? offset = null, [Query] string? ordering = null, [Query(Name = "hour_start")] string? hourStart = null, [Query(Name = "hour_start__gte")] string? hourStartGte = null, [Query(Name = "hour_start__lte")] string? hourStartLte = null);
+    Task<PagedResult<HourStatistics>> GetHourStatisticsAsync([Query] int? limit = null, [Query] int? offset = null, [Query] string? ordering = null, [Query(Name = "hour_start")] string? hourStart = null, [Query(Name = "hour_start__gte")] string? hourStartGte = null, [Query(Name = "hour_start__lte")] string? hourStartLte = null);
 
     /// <summary>
     /// Returns the version of DSMR-reader you are running.
