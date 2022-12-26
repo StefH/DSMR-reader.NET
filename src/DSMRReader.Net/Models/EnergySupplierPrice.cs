@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 
 namespace DSMRReader.Net.Models;
 
@@ -16,35 +17,39 @@ public class EnergySupplierPrice
     /// <summary>
     /// For your own reference, i.e. the name of your supplier
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     /// Set to zero when: Unused / Defined in other contract / Not applicable to your situation
     /// </summary>
-    public string ElectricityDelivered1Price { get; set; }
+    [JsonProperty("electricity_delivered_1_price")]
+    public string? ElectricityDelivered1Price { get; set; }
 
     /// <summary>
     /// Set to zero when: Unused / Defined in other contract / Not applicable to your situation
     /// </summary>
-    public string ElectricityDelivered2Price { get; set; }
+    [JsonProperty("electricity_delivered_2_price")]
+    public string? ElectricityDelivered2Price { get; set; }
 
     /// <summary>
     /// Set to zero when: Unused / Defined in other contract / Not applicable to your situation
     /// </summary>
-    public string GasPrice { get; set; }
+    public string? GasPrice { get; set; }
 
     /// <summary>
     /// Set to zero when: Unused / Defined in other contract / Not applicable to your situation
     /// </summary>
-    public string ElectricityReturned1Price { get; set; }
+    [JsonProperty("electricity_returned_1_price")]
+    public string? ElectricityReturned1Price { get; set; }
 
     /// <summary>
     /// Set to zero when: Unused / Defined in other contract / Not applicable to your situation
     /// </summary>
-    public string ElectricityReturned2Price { get; set; }
+    [JsonProperty("electricity_returned_2_price")]
+    public string? ElectricityReturned2Price { get; set; }
 
     /// <summary>
     /// Both positive and negative prices allowed. Set to zero when: Unused / Defined in other contract / Not applicable to your situation
     /// </summary>
-    public string FixedDailyCost { get; set; }
+    public string? FixedDailyCost { get; set; }
 }

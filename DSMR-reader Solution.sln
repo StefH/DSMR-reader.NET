@@ -24,6 +24,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSMRReader.Net.DependencyIn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSMRReader.Net.ConsoleApp", "example\DSMRReader.Net.ConsoleApp\DSMRReader.Net.ConsoleApp.csproj", "{45DCCF6A-188E-4353-8413-02CA1BD1B2A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postman", "postman", "{D6C1E45A-4E7B-4055-9CF6-DBFEE9067C0B}"
+	ProjectSection(SolutionItems) = preProject
+		postman\collection.json = postman\collection.json
+		postman\schema.json = postman\schema.json
+		postman\variables.json = postman\variables.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

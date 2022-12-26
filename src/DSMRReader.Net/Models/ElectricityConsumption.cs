@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 
 namespace DSMRReader.Net.Models;
 
@@ -11,21 +12,25 @@ public class ElectricityConsumption
     /// <summary>
     /// Meter Reading electricity delivered to client (Dutch users: low tariff) in 0,001 kWh
     /// </summary>
+    [JsonProperty("delivered_1")]
     public string Delivered1 { get; set; }
 
     /// <summary>
     /// Meter Reading electricity delivered by client (Dutch users: low tariff) in 0,001 kWh
     /// </summary>
+    [JsonProperty("returned_1")]
     public string Returned1 { get; set; }
 
     /// <summary>
     /// Meter Reading electricity delivered to client (normal tariff) in 0,001 kWh
     /// </summary>
+    [JsonProperty("delivered_2")]
     public string Delivered2 { get; set; }
 
     /// <summary>
     /// Meter Reading electricity delivered by client (normal tariff) in 0,001 kWh
     /// </summary>
+    [JsonProperty("returned_2")]
     public string Returned2 { get; set; }
 
     /// <summary>

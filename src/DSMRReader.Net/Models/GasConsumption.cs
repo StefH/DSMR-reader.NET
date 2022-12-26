@@ -11,10 +11,10 @@ public class GasConsumption
     /// <summary>
     /// Last meter position read
     /// </summary>
-    public string Delivered { get; set; }
+    public string? Delivered { get; set; } = null!;
 
     /// <summary>
     /// Delivered value, based on the previous reading
     /// </summary>
-    public string CurrentlyDelivered { get; set; }
+    public string CurrentlyDelivered { get; set; } = null!;
 }

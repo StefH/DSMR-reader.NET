@@ -19,5 +19,5 @@ public class QuarterHourPeakElectricityConsumption
     /// <summary>
     /// In kW. Calculated by tracking the kWh/15m consumption during the given start/end and multiplying it by 4
     /// </summary>
-    public string AverageDelivered { get; set; }
+    public string AverageDelivered { get; set; } = null!;
 }
