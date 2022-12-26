@@ -70,7 +70,7 @@ public static class ServiceCollectionExtensions
             options.BaseUrl,
             client =>
             {
-                client.JsonSerializerSettings = DSMRReaderApiFactory.Settings;
+                client.JsonSerializerSettings = DSMRReaderApiFactory.JsonSerializerSettings;
             },
             (request, _) =>
             {

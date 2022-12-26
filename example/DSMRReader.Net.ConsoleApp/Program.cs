@@ -7,45 +7,50 @@ var api = factory.GetApi(new Uri("http://192.168.50.180:7777"), "BW1NY53R71O0BMH
 
 // Application
 var applicationVersion = await api.GetApplicationVersionAsync();
-Console.WriteLine(JsonConvert.SerializeObject(applicationVersion, Formatting.Indented));
+WriteLine(applicationVersion);
 
 var applicationMonitoring = await api.GetApplicationMonitoringAsync();
-Console.WriteLine(JsonConvert.SerializeObject(applicationMonitoring, Formatting.Indented));
+WriteLine(applicationMonitoring);
 
 
 // DataLogger
 var readings = await api.GetDataLoggerReadingsAsync(timestampGte: "2022-01-15 00:00:00");
-Console.WriteLine(JsonConvert.SerializeObject(readings, Formatting.Indented));
+WriteLine(readings);
 
 var meterStatistics = await api.GetMeterStatisticsAsync();
-Console.WriteLine(JsonConvert.SerializeObject(meterStatistics, Formatting.Indented));
+WriteLine(meterStatistics);
 
 
 // Consumption
 var prices = await api.GetEnergySupplierPricesAsync();
-Console.WriteLine(JsonConvert.SerializeObject(prices, Formatting.Indented));
+WriteLine(prices);
 
 var electricityConsumptionLive = await api.GetElectricityConsumptionLiveAsync();
-Console.WriteLine(JsonConvert.SerializeObject(electricityConsumptionLive, Formatting.Indented));
+WriteLine(electricityConsumptionLive);
 
 var electricityConsumptions = await api.GetElectricityConsumptionsAsync(readAtGte: "2022-12-24");
-Console.WriteLine(JsonConvert.SerializeObject(electricityConsumptions, Formatting.Indented));
+WriteLine(electricityConsumptions);
 
 var getQuarterHourPeakElectricityConsumptionsAsync = await api.GetQuarterHourPeakElectricityConsumptionsAsync();
-Console.WriteLine(JsonConvert.SerializeObject(getQuarterHourPeakElectricityConsumptionsAsync, Formatting.Indented));
+WriteLine(getQuarterHourPeakElectricityConsumptionsAsync);
 
 var gasConsumptionLive = await api.GetGasConsumptionLiveAsync();
-Console.WriteLine(JsonConvert.SerializeObject(gasConsumptionLive, Formatting.Indented));
+WriteLine(gasConsumptionLive);
 
 var gasConsumptions = await api.GetGasConsumptionsAsync();
-Console.WriteLine(JsonConvert.SerializeObject(gasConsumptions, Formatting.Indented));
+WriteLine(gasConsumptions);
 
 // Statistics
 var today = await api.GetTodaysConsumptionsAsync();
-Console.WriteLine(JsonConvert.SerializeObject(today, Formatting.Indented));
+WriteLine(today);
 
 var dayStatistics = await api.GetDayStatisticsAsync();
-Console.WriteLine(JsonConvert.SerializeObject(dayStatistics, Formatting.Indented));
+WriteLine(dayStatistics);
 
 var hourStatistics = await api.GetHourStatisticsAsync();
-Console.WriteLine(JsonConvert.SerializeObject(hourStatistics, Formatting.Indented));
+WriteLine(hourStatistics);
+
+static void WriteLine(object value)
+{
+    Console.WriteLine(JsonConvert.SerializeObject(value, DSMRReaderApiFactory.JsonSerializerSettings));
+}

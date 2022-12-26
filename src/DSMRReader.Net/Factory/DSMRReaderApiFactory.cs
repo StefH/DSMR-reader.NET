@@ -14,7 +14,7 @@ public class DSMRReaderApiFactory : IDSMRReaderApiFactory
     public const string AuthenticationScheme = "Token";
     public static readonly Uri BaseUrl = new("http://localhost:7777/");
 
-    public static readonly JsonSerializerSettings Settings = new()
+    public static readonly JsonSerializerSettings JsonSerializerSettings = new()
     {
         ContractResolver = new DefaultContractResolver
         {
@@ -38,7 +38,7 @@ public class DSMRReaderApiFactory : IDSMRReaderApiFactory
             }
         )
         {
-            JsonSerializerSettings = Settings
+            JsonSerializerSettings = JsonSerializerSettings
         }
         .For<IDSMRReaderApi>();
     }
